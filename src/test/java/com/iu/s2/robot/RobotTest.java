@@ -1,23 +1,28 @@
-package com.iu.s2;
+package com.iu.s2.robot;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/**/*-context.xml"})
-public class MyTestCase {
-	
-	@Autowired
-	private Car car;
+public class RobotTest {
 
+	@Autowired
+	private Robot robot;
+	
 	@Test
-	public void test1() {
-		System.out.println(car.getEngine().getFuel());
+	public void test() {
+		//left_arm의 name
+		//right_arm의 name
+		
+		System.out.println(robot.getArm_Left().getName());
+		System.out.println(robot.getArm_Right().getName());
 	}
+
 }
