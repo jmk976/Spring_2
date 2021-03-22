@@ -4,5 +4,28 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+	
+	<!--  Arm_Left arm_Left = new Arm_Left() -->
+	<bean class="com.iu.s2.robot.Arm_Left" id="arm_Left"></bean>  <!-- Arm_Left부분 선 -->
+	
+	<!-- Arm_Right arm_Right = new Arm_Right() -->
+	<bean class="com.iu.s2.robot.Arm_Right" id="arm_Right"></bean>
+	
+	<!--Robot 객체 생성 Robot robot = new Robot();<-기본생성자 호출코드-->
+	<bean class="com.iu.s2.robot.Robot" id="robot">
+	
+		<!-- setter 사용  (객체안에 만들어야함. 객체가 만들어져야 사용가능하니까) ref- 레퍼런스,참조 타입  value- 프리미티브, string 타입-->
+		<property name="arm_Left" ref="arm_Left"></property>
+		<property name="arm_Right" ref="arm_Right"></property>
+		<!-- 생성자 사용 arg(매개변수) -->
+		<constructor-arg name="age" value="20"></constructor-arg>
+	    <constructor-arg name="name" value="iu"></constructor-arg>
+	    <constructor-arg name="price" value="200"></constructor-arg>
+	</bean>
+
+	
+
+
 </beans>
+
+<!-- Beans grape -나올 모습 표시 -->
